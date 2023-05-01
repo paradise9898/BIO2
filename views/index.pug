@@ -9,6 +9,7 @@ head
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+  script(src="moment.js.com/downloads/moment-with-locals.min.js") 
   link(href='/public/css/style.css' rel='stylesheet' type='text/css')
 // partial:index.partial.html
 // navbar header
@@ -275,9 +276,7 @@ script.
   Document.getElementById('name').textContent = Name;
   Document.getElementById('email').textContent = Email;
   Document.getElementById('message').textContent = Message;
-  
-
-  const data = {Name, Email, Message};
+  const date = moment().format('LLL')
 
   const options = {
   method: 'POST'
@@ -295,5 +294,6 @@ script.
   console.log(Surname)
   console.log(Email)
   console.log(Message)
+  console.log(date)
 
   fetch('/req' , options)
